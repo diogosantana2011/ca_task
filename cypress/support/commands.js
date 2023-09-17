@@ -185,6 +185,11 @@ Cypress.Commands.add('forgotPassword', () => {
 });
 
 Cypress.Commands.add('checkEmailInbox' , () => {
+    /**
+     * Different email inbox, with email already there
+     * from 'Forgot password'. Can be changed to different
+     * mailsac inbox
+     */
     const email = Cypress.env('mailsacEmail');
     cy.request({
         method: 'GET',
@@ -199,7 +204,6 @@ Cypress.Commands.add('checkEmailInbox' , () => {
         
         if (actual.length <= 0) {
             cy.log('No emails retrieved')
-            return
         } else {
             expect(status).to.eq(200)
             expect(actual[0].subject).to.eql('Reset password')

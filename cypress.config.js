@@ -10,7 +10,8 @@ module.exports = defineConfig({
       ...process.env,
       be: "https://www.c-and-a.com/",
       mailsacApi: "https://mailsac.com/api",
-      mailsacEmail: "ca_registration.diogo@mailsac.com"
+      mailsacEmail: "ca_registration.diogo@mailsac.com",
+      mailsacEmail1: "ca_registration@mailsac.com"
     },
     baseUrl: "https://www.c-and-a.com/eu/en/shop",
     downloadsFolder: 'cypress/downloads',
