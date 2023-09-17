@@ -5,13 +5,14 @@
   },
   "scripts": {
     "cy:open": "cypress open",
-    "cy:run:loginTest": "cypress run -b chrome --spec 'cypress/e2e/*' -c video=false"
+    "cy:run:loginTest": "cypress run -b chrome --spec 'cypress/e2e/ca.login.js' -c video=false"
   },
   "description": "QA task for C&A",
   "dependencies": {
     "@bahmutov/cy-api": "2.2.1",
     "cypress": "13.1.0",
     "cypress-xpath": "2.0.1",
-    "dotenv": "16.3.1"
+    "dotenv": "16.3.1",
+    "mochawesome": "7.1.3"
   }
 }

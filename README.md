@@ -9,7 +9,11 @@
 2. [Technologies](#technologies)
 3. [Project structure](#project-structure)
 4. [Installation](#installation)
-5. [Email contact](#questions)
+5. [Reporter - Mochawesome](#reporters)
+
+    -[Mochawesome](#reporters)
+
+6. [Email contact](#questions)
 
 ### General Info
 This is a QA task for C&A login page. This includes docs for manual tests covered (tests.txt), and test themselves using [Cypress](https://www.cypress.io/) automation framework.
@@ -29,7 +33,7 @@ Mailsac email api: [Mailsac](https://mailsac.com/)
 
 Mailsac is free for sign up, and inboxes can be created with different emails and a different email api key.
 
-Within the `before()` clause on the start of the script, mailsac will be called on whichever inbox is set as 'mailsacEmail1' env variable, and delete all emails. Then we assert that after triggering of the forgot password, we can await and assert email is received.
+On **Forgot Password** spec; within the `before()` clause on the start of the script, mailsac will be called on whichever inbox is set as 'mailsacEmail1' env variable, and delete all emails. Then we assert that after triggering of the forgot password, we can await and assert email is received.
 
 During creation I did test the website with different accounts but at some point I stopped receiving the emails in Mailsac. Not sure if anti-spam or security feature.
 
@@ -83,6 +87,18 @@ Here, the test will run on terminal.
 <img src="./cypress/CA_TASK-CLI.png" alt="isolated" width="650">
 
 All start and run scripts available in 'package.json'.
+
+## Reporters
+Example reporter already included under `cypress/results/mochawesome.html`.
+
+If you open file in browser, by adding its full path, you will see a formated reported. 
+
+Further cypress reporter options available below:
+[Cypress reporters](https://docs.cypress.io/guides/tooling/reporters)
+
+   -[Mochawsome](https://github.com/adamgruber/mochawesome-report-generator)
+
+<img src="./cypress/Reporter.png" alt="isolated" width="650">
 
 ## Questions
 
