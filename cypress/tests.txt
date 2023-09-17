@@ -1,0 +1,57 @@
+Feature: Account registration
+
+Background: 
+
+	-> WHEN User navigates to url (C&A) 
+	-> AND clicks on `Register Now`
+	-> THEN user taken to Registration page
+
+Scenario: User able to recover password
+
+	-> GIVEN user has valid email
+	-> WHEN user types ‘email’ into email field
+	-> AND clicks 'Continue'
+	-> AND fills in form details
+	-> AND clicks on `Create an account now`
+	-> THEN account is created 
+
+——
+
+Feature: Login
+
+Scenario: Successful Login
+	-> GIVEN User navigates to url (C&A)
+	-> WHEN User enters username and password
+	-> THEN User is logged in successful
+	-> AND no error is shown
+
+Scenario: Login failure - empty fields
+
+	-> WHEN clicking enter on login
+	-> AND username field is empty
+	-> AND password field is empty
+	-> THEN error is given for missing credentials
+	-> AND respective fields highlighted as areas of error
+
+Scenario: Login failure - Incorrect credentials
+
+	-> WHEN user types 'imARandomUser@email.com’ in email field
+	-> AND password 'thisIsNotAPassword123!’ in ‘password’ field
+	-> THEN error presented 'Oops! Your email address or password is not correct.'	
+
+——
+
+Feature: Forgot password
+
+Background: 
+
+	-> WHEN User navigates to url (C&A) 
+	-> AND clicks on ‘forgot password’
+	-> THEN forgot password input field is displayed
+
+Scenario: User able to recover password
+
+	-> GIVEN user has valid account credentials
+	-> WHEN user types ‘email’ into email field
+	-> AND clicks ’Send e-mail'
+	-> THEN email reset password email sent to user
