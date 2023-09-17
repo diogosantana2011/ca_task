@@ -5,7 +5,7 @@
   },
   "scripts": {
     "cy:open": "cypress open",
-    "cy:run:tests": ""
+    "cy:run:loginTest": "cypress run -b chrome --spec 'cypress/e2e/*' -c video=false"
   },
   "description": "QA task for C&A",
   "dependencies": {
